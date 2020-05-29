@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          #  Git仓库地址
+          uri: https://github.com/OKlala1999/SpringCloudYML.git
+          #  Git仓库用户名或邮箱
+          username:  OKlala1999
+          #  Git仓库密码
+          password: a874724873
+
+server:
+  # 指定端口号
+  port: 8888
