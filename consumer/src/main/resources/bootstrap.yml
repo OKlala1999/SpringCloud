@@ -1,0 +1,31 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+    #instance:
+    # hostname: clientName
+spring:
+  application:
+    name: consumer
+  cloud:
+    config:
+     # name: application #需要从github上读取的资源名称，注意没有yml后缀名
+      profile: dev   #本次访问的配置项
+      label: master
+      uri: http://localhost:8888/  #本微服务启动后先去找3344号服务，通过SpringCloudConfig获取GitHub的服务地址
+    bus:
+      trace:
+        enabled: true     # 开启cloud bus的跟踪
+
+  rabbitmq:
+    host: localhost
+    username: guest
+    password: guest
+    port: 5672
+server:
+  port: 8763
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh
